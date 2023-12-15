@@ -8,15 +8,16 @@ namespace exl::hook::nx64 {
     };
 
     union GpRegisters {
-        GpRegister m_Gp[31];
+        GpRegister m_Gp[32];
         struct {
-            GpRegister _Gp[29];
+            GpRegister _Gp[30];
             GpRegister m_Fp;
             GpRegister m_Lr;
         };
     };
     
     union FpRegister {
+        f64 Q[2];
         //f128 Q;
         f64 D;
         f32 S;
@@ -25,7 +26,7 @@ namespace exl::hook::nx64 {
     };
 
     union FpRegisters {
-        FpRegister m_Fps[31];
+        FpRegister m_Fps[32];
         // might add FPCRs here?
     };
 

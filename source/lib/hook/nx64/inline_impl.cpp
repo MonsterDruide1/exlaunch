@@ -60,7 +60,7 @@ namespace exl::hook::nx64 {
         auto trampoline = Hook(hook, entryCb, true);
         /* Offset of LR before SP is moved. */
         static constexpr int lrBackupOffset = int(offsetof(InlineCtx, m_Gpr.m_Lr)) - CtxStackSize;
-        static_assert(lrBackupOffset == -0x210, "InlineCtx is not ABI compatible.");
+        static_assert(lrBackupOffset == -0x218, "InlineCtx is not ABI compatible.");
 
         /* Construct entrypoint instructions. */
         auto impl = GetImpl();
