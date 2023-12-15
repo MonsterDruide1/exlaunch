@@ -34,6 +34,12 @@ typedef	unsigned short	ushort;
 typedef	unsigned int	uint;	
 typedef	unsigned long	ulong;
 
+//typedef bfloat8_t f8;
+//typedef bfloat16_t f16;
+typedef float f32;
+typedef double f64;
+//typedef __float128 f128;
+
 
 #define ALIGN_UP(x, a) ((((uintptr_t)x) + (((uintptr_t)a)-1)) & ~(((uintptr_t)a)-1))
 #define ALIGN_DOWN(x, a) ((uintptr_t)(x) & ~(((uintptr_t)(a)) - 1))

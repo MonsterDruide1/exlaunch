@@ -9,7 +9,7 @@
 namespace exl::hook::nx64 {
 
     /* Size of stack to reserve for the context. Adjust this along with CTX_STACK_SIZE in inline_asm.s */
-    static constexpr int CtxStackSize = 0x100;
+    static constexpr int CtxStackSize = 0x300;
 
     namespace reg = exl::armv8::reg;
     namespace inst = exl::armv8::inst;
@@ -60,7 +60,7 @@ namespace exl::hook::nx64 {
         auto trampoline = Hook(hook, entryCb, true);
         /* Offset of LR before SP is moved. */
         static constexpr int lrBackupOffset = int(offsetof(InlineCtx, m_Gpr.m_Lr)) - CtxStackSize;
-        static_assert(lrBackupOffset == -0x10, "InlineCtx is not ABI compatible.");
+        static_assert(lrBackupOffset == -0x210, "InlineCtx is not ABI compatible.");
 
         /* Construct entrypoint instructions. */
         auto impl = GetImpl();
