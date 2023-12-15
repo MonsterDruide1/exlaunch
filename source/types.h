@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <limits.h>
+#include <arm_neon.h>
 
 typedef uint8_t u8;       ///<   8-bit unsigned integer.
 typedef uint16_t u16;     ///<  16-bit unsigned integer.
@@ -34,11 +35,11 @@ typedef	unsigned short	ushort;
 typedef	unsigned int	uint;	
 typedef	unsigned long	ulong;
 
-//typedef bfloat8_t f8;
-//typedef bfloat16_t f16;
+//typedef float8_t f8;
+typedef float16_t f16;
 typedef float f32;
 typedef double f64;
-//typedef __float128 f128;
+//typedef __bf128 f128;
 
 
 #define ALIGN_UP(x, a) ((((uintptr_t)x) + (((uintptr_t)a)-1)) & ~(((uintptr_t)a)-1))

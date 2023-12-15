@@ -17,11 +17,10 @@ namespace exl::hook::nx64 {
     };
     
     union FpRegister {
-        //f128 V;
         //f128 Q;
         f64 D;
         f32 S;
-        //f16 H;
+        f16 H;
         //f8 B;
     };
 
@@ -77,13 +76,13 @@ namespace exl::hook::nx64 {
                 return Get().m_Fps[index].S;
             }
         };
-        /*struct FpRegisterAccessor16 : public FpRegisterAccessorImpl {
+        struct FpRegisterAccessor16 : public FpRegisterAccessorImpl {
             f16& operator[](int index)
             {
                 return Get().m_Fps[index].H;
             }
         };
-        struct FpRegisterAccessor8 : public FpRegisterAccessorImpl {
+        /*struct FpRegisterAccessor8 : public FpRegisterAccessorImpl {
             f8& operator[](int index)
             {
                 return Get().m_Fps[index].B;
@@ -99,11 +98,10 @@ namespace exl::hook::nx64 {
             GpRegisters m_Gpr;
         };
         union {
-            //impl::FpRegisterAccessor128 V;
             //impl::FpRegisterAccessor128 Q;
             impl::FpRegisterAccessor64 D;
             impl::FpRegisterAccessor32 S;
-            //impl::FpRegisterAccessor16 H;
+            impl::FpRegisterAccessor16 H;
             //impl::FpRegisterAccessor8 B;
         };
     };
