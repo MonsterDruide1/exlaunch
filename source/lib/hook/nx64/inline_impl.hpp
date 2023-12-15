@@ -103,6 +103,7 @@ namespace exl::hook::nx64 {
             impl::FpRegisterAccessor32 S;
             impl::FpRegisterAccessor16 H;
             //impl::FpRegisterAccessor8 B;
+            FpRegisters m_Fpr;
         };
     };
 
